@@ -6,12 +6,15 @@ html(lang='en')
     main.container
       include includes/logo.pug
       section.main-section_container
+        h1.mainTitle Analize your file
         form#uploadForm.main-form(action='/upload', method='post', enctype='multipart/form-data')
           .main-form_inputs
-            label.custom-label(for='uploadFile')  Upload File 
-            input#uploadFile.custom-input.upload-input(type='file', name='sampleFile', value='', placeholder='Upload file')
-            input#analizeUrl.custom-input.input-url(type='url', name='sampleUrl', value='', placeholder='Analysis from URL', pattern='')
-          button.submit-button(type='submit', name='button')  Analize 
+            label.custom-label(for='uploadFile')  From File 
+            input#uploadFile.custom-input.upload-input(type='file', name='sampleFile', value='', placeholder='From file')
+            span or
+            
+            input#analizeUrl.custom-input.input-url(type='url', name='sampleUrl', value='', placeholder='From URL')
+          button.submit-button(type='submit', name='button')  Analize… 
       aside.disclaimer
         p
           |Disclaimer: This project is intended to sensitize the user about cybersecurity, prevention and detection of unauthorized use of computer systems.
