@@ -8,6 +8,9 @@ const port = process.env.PORT || 3000;
 
 // Middelware
 app.use(express.static('public'));
+// add statics ./temp as /forensic, except .json files
+//const jsonRegex = /\/forensic\/(.(?!.*\.json$))*$/;
+//app.use(jsonRegex, express.static(__dirname + '/temp'));
 app.use("/forensic", express.static(__dirname + '/temp'));
 app.use(fileUpload());
 app.use(bodyParser.urlencoded({ extended: true }));
